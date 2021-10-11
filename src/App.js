@@ -1,10 +1,9 @@
 import React from 'react'
-import PokemonPage from './components/PokemonPage'
-import './App.css'
+import PokemonIndex from './components/PokemonIndex'
 
 const App = () => (
   <div className="App">
-    <PokemonPage />
+    <PokemonIndex />
   </div>
 )
 

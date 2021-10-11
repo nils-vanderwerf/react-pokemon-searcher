@@ -1,27 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Card } from 'semantic-ui-react'
 
-class PokemonCard extends React.Component {
-  render() {
+const PokemonCard = ({pokemon}) => {
+  const [isClicked, setIsClicked] = useState(false)
+  const {id, name, hp, sprites} = pokemon
+  const url = isClicked ? sprites.back : sprites.front
     return (
       <Card>
         <div>
           <div className="image">
-            <img alt="oh no!" />
+            <img alt={name} onClick={() => setIsClicked(!isClicked)} 
+            src={url} />
           </div>
           <div className="content">
-            <div className="header">POKEMON NAME HERE</div>
+            <div className="header">{name}</div>
           </div>
           <div className="extra content">
             <span>
               <i className="icon heartbeat red" />
-              POKEMON HP HERE hp
+              {hp}
             </span>
           </div>
         </div>
       </Card>
     )
   }
-}
 
 export default PokemonCard
